@@ -7,25 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10A03AF51C5BBE51006E9EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A03AF41C5BBE51006E9EDE /* AppDelegate.swift */; };
-		10A03AF71C5BBE51006E9EDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A03AF61C5BBE51006E9EDE /* ViewController.swift */; };
-		10A03AFA1C5BBE51006E9EDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A03AF81C5BBE51006E9EDE /* Main.storyboard */; };
-		10A03AFC1C5BBE51006E9EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A03AFB1C5BBE51006E9EDE /* Assets.xcassets */; };
-		10A03AFF1C5BBE51006E9EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A03AFD1C5BBE51006E9EDE /* LaunchScreen.storyboard */; };
+		102EC8B51C5CE45100D14963 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102EC8B41C5CE45100D14963 /* AppDelegate.swift */; };
+		102EC8BC1C5CE45100D14963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8BB1C5CE45100D14963 /* Assets.xcassets */; };
+		102EC8BF1C5CE45100D14963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8BD1C5CE45100D14963 /* LaunchScreen.storyboard */; };
+		102EC8CC1C5CE57300D14963 /* TipCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102EC8CA1C5CE57300D14963 /* TipCalculatorViewController.swift */; };
+		102EC8CD1C5CE57300D14963 /* TipCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8CB1C5CE57300D14963 /* TipCalculatorViewController.xib */; };
+		102EC8D41C5CF2FC00D14963 /* setting_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8D31C5CF2FC00D14963 /* setting_icon@3x.png */; };
+		102EC8DB1C5CF46C00D14963 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102EC8D91C5CF46C00D14963 /* SettingsViewController.swift */; };
+		102EC8DC1C5CF46C00D14963 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8DA1C5CF46C00D14963 /* SettingsViewController.xib */; };
+		102EC8DE1C5CFCD300D14963 /* back_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8DD1C5CFCD300D14963 /* back_icon@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10A03AF11C5BBE51006E9EDE /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		10A03AF41C5BBE51006E9EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		10A03AF61C5BBE51006E9EDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		10A03AF91C5BBE51006E9EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		10A03AFB1C5BBE51006E9EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		10A03AFE1C5BBE51006E9EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		10A03B001C5BBE51006E9EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		102EC8B11C5CE45100D14963 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		102EC8B41C5CE45100D14963 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
+		102EC8BB1C5CE45100D14963 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		102EC8BE1C5CE45100D14963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		102EC8C01C5CE45100D14963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		102EC8CA1C5CE57300D14963 /* TipCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorViewController.swift; sourceTree = "<group>"; };
+		102EC8CB1C5CE57300D14963 /* TipCalculatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipCalculatorViewController.xib; sourceTree = "<group>"; };
+		102EC8D31C5CF2FC00D14963 /* setting_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting_icon@3x.png"; sourceTree = "<group>"; };
+		102EC8D91C5CF46C00D14963 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		102EC8DA1C5CF46C00D14963 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		102EC8DD1C5CFCD300D14963 /* back_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		10A03AEE1C5BBE51006E9EDE /* Frameworks */ = {
+		102EC8AE1C5CE45100D14963 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,53 +43,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10A03AE81C5BBE51006E9EDE = {
+		102EC8A81C5CE45100D14963 = {
 			isa = PBXGroup;
 			children = (
-				10A03AF31C5BBE51006E9EDE /* TipCalculator */,
-				10A03AF21C5BBE51006E9EDE /* Products */,
+				102EC8B31C5CE45100D14963 /* TipCalculator */,
+				102EC8B21C5CE45100D14963 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		10A03AF21C5BBE51006E9EDE /* Products */ = {
+		102EC8B21C5CE45100D14963 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				10A03AF11C5BBE51006E9EDE /* TipCalculator.app */,
+				102EC8B11C5CE45100D14963 /* TipCalculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		10A03AF31C5BBE51006E9EDE /* TipCalculator */ = {
+		102EC8B31C5CE45100D14963 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				10A03AF81C5BBE51006E9EDE /* Main.storyboard */,
-				10A03AF61C5BBE51006E9EDE /* ViewController.swift */,
-				10A03B061C5BBE85006E9EDE /* Supporting File */,
-				10A03B001C5BBE51006E9EDE /* Info.plist */,
+				102EC8CE1C5CE9B100D14963 /* Resource */,
+				102EC8C61C5CE4E300D14963 /* TipViewController */,
+				102EC8C91C5CE55400D14963 /* SettingsViewController */,
+				102EC8C71C5CE52D00D14963 /* Supporting File */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
 		};
-		10A03B061C5BBE85006E9EDE /* Supporting File */ = {
+		102EC8C61C5CE4E300D14963 /* TipViewController */ = {
 			isa = PBXGroup;
 			children = (
-				10A03AFD1C5BBE51006E9EDE /* LaunchScreen.storyboard */,
-				10A03AFB1C5BBE51006E9EDE /* Assets.xcassets */,
-				10A03AF41C5BBE51006E9EDE /* AppDelegate.swift */,
+				102EC8CA1C5CE57300D14963 /* TipCalculatorViewController.swift */,
+				102EC8CB1C5CE57300D14963 /* TipCalculatorViewController.xib */,
+			);
+			path = TipViewController;
+			sourceTree = "<group>";
+		};
+		102EC8C71C5CE52D00D14963 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				102EC8BD1C5CE45100D14963 /* LaunchScreen.storyboard */,
+				102EC8BB1C5CE45100D14963 /* Assets.xcassets */,
+				102EC8C01C5CE45100D14963 /* Info.plist */,
+				102EC8B41C5CE45100D14963 /* AppDelegate.swift */,
 			);
 			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		102EC8C91C5CE55400D14963 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				102EC8D91C5CF46C00D14963 /* SettingsViewController.swift */,
+				102EC8DA1C5CF46C00D14963 /* SettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		102EC8CE1C5CE9B100D14963 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				102EC8DD1C5CFCD300D14963 /* back_icon@3x.png */,
+				102EC8D31C5CF2FC00D14963 /* setting_icon@3x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		10A03AF01C5BBE51006E9EDE /* TipCalculator */ = {
+		102EC8B01C5CE45100D14963 /* TipCalculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 10A03B031C5BBE51006E9EDE /* Build configuration list for PBXNativeTarget "TipCalculator" */;
+			buildConfigurationList = 102EC8C31C5CE45100D14963 /* Build configuration list for PBXNativeTarget "TipCalculator" */;
 			buildPhases = (
-				10A03AED1C5BBE51006E9EDE /* Sources */,
-				10A03AEE1C5BBE51006E9EDE /* Frameworks */,
-				10A03AEF1C5BBE51006E9EDE /* Resources */,
+				102EC8AD1C5CE45100D14963 /* Sources */,
+				102EC8AE1C5CE45100D14963 /* Frameworks */,
+				102EC8AF1C5CE45100D14963 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -89,25 +125,26 @@
 			);
 			name = TipCalculator;
 			productName = TipCalculator;
-			productReference = 10A03AF11C5BBE51006E9EDE /* TipCalculator.app */;
+			productReference = 102EC8B11C5CE45100D14963 /* TipCalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		10A03AE91C5BBE51006E9EDE /* Project object */ = {
+		102EC8A91C5CE45100D14963 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "nguyen trung quang";
 				TargetAttributes = {
-					10A03AF01C5BBE51006E9EDE = {
+					102EC8B01C5CE45100D14963 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = V5BCKD2C56;
 					};
 				};
 			};
-			buildConfigurationList = 10A03AEC1C5BBE51006E9EDE /* Build configuration list for PBXProject "TipCalculator" */;
+			buildConfigurationList = 102EC8AC1C5CE45100D14963 /* Build configuration list for PBXProject "TipCalculator" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -115,54 +152,50 @@
 				en,
 				Base,
 			);
-			mainGroup = 10A03AE81C5BBE51006E9EDE;
-			productRefGroup = 10A03AF21C5BBE51006E9EDE /* Products */;
+			mainGroup = 102EC8A81C5CE45100D14963;
+			productRefGroup = 102EC8B21C5CE45100D14963 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				10A03AF01C5BBE51006E9EDE /* TipCalculator */,
+				102EC8B01C5CE45100D14963 /* TipCalculator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		10A03AEF1C5BBE51006E9EDE /* Resources */ = {
+		102EC8AF1C5CE45100D14963 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10A03AFF1C5BBE51006E9EDE /* LaunchScreen.storyboard in Resources */,
-				10A03AFC1C5BBE51006E9EDE /* Assets.xcassets in Resources */,
-				10A03AFA1C5BBE51006E9EDE /* Main.storyboard in Resources */,
+				102EC8BF1C5CE45100D14963 /* LaunchScreen.storyboard in Resources */,
+				102EC8D41C5CF2FC00D14963 /* setting_icon@3x.png in Resources */,
+				102EC8BC1C5CE45100D14963 /* Assets.xcassets in Resources */,
+				102EC8CD1C5CE57300D14963 /* TipCalculatorViewController.xib in Resources */,
+				102EC8DC1C5CF46C00D14963 /* SettingsViewController.xib in Resources */,
+				102EC8DE1C5CFCD300D14963 /* back_icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		10A03AED1C5BBE51006E9EDE /* Sources */ = {
+		102EC8AD1C5CE45100D14963 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10A03AF71C5BBE51006E9EDE /* ViewController.swift in Sources */,
-				10A03AF51C5BBE51006E9EDE /* AppDelegate.swift in Sources */,
+				102EC8CC1C5CE57300D14963 /* TipCalculatorViewController.swift in Sources */,
+				102EC8B51C5CE45100D14963 /* AppDelegate.swift in Sources */,
+				102EC8DB1C5CF46C00D14963 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		10A03AF81C5BBE51006E9EDE /* Main.storyboard */ = {
+		102EC8BD1C5CE45100D14963 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				10A03AF91C5BBE51006E9EDE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		10A03AFD1C5BBE51006E9EDE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				10A03AFE1C5BBE51006E9EDE /* Base */,
+				102EC8BE1C5CE45100D14963 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ..;
@@ -171,7 +204,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		10A03B011C5BBE51006E9EDE /* Debug */ = {
+		102EC8C11C5CE45100D14963 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -216,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		10A03B021C5BBE51006E9EDE /* Release */ = {
+		102EC8C21C5CE45100D14963 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -254,49 +287,53 @@
 			};
 			name = Release;
 		};
-		10A03B041C5BBE51006E9EDE /* Debug */ = {
+		102EC8C41C5CE45100D14963 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trunhquang.TipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		10A03B051C5BBE51006E9EDE /* Release */ = {
+		102EC8C51C5CE45100D14963 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trunhquang.TipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		10A03AEC1C5BBE51006E9EDE /* Build configuration list for PBXProject "TipCalculator" */ = {
+		102EC8AC1C5CE45100D14963 /* Build configuration list for PBXProject "TipCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				10A03B011C5BBE51006E9EDE /* Debug */,
-				10A03B021C5BBE51006E9EDE /* Release */,
+				102EC8C11C5CE45100D14963 /* Debug */,
+				102EC8C21C5CE45100D14963 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		10A03B031C5BBE51006E9EDE /* Build configuration list for PBXNativeTarget "TipCalculator" */ = {
+		102EC8C31C5CE45100D14963 /* Build configuration list for PBXNativeTarget "TipCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				10A03B041C5BBE51006E9EDE /* Debug */,
-				10A03B051C5BBE51006E9EDE /* Release */,
+				102EC8C41C5CE45100D14963 /* Debug */,
+				102EC8C51C5CE45100D14963 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 10A03AE91C5BBE51006E9EDE /* Project object */;
+	rootObject = 102EC8A91C5CE45100D14963 /* Project object */;
 }

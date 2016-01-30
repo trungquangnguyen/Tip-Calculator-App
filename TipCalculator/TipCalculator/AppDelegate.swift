@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TipCalculator
 //
-//  Created by nguyen trung quang on 1/29/16.
+//  Created by nguyen trung quang on 1/30/16.
 //  Copyright © 2016 nguyen trung quang. All rights reserved.
 //
 
@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let frame = UIScreen.mainScreen().bounds
+        window = UIWindow(frame: frame)
+        
+        let tipViewControler       = TipCalculatorViewController()
+        let navigationController   = UINavigationController(rootViewController: tipViewControler)
+        if let window = self.window{
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
         return true
     }
 
