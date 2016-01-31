@@ -2,7 +2,7 @@
 Requirements of CoderSchool
 
 
-This application for iOS.
+This application for iOS 8 or later.
 
 Submitted by: **Nguyen Trung Quang**
 
