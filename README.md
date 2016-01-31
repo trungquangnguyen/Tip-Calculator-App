@@ -10,11 +10,11 @@ Time spent: 8 hours spent in total
 
 ## Video Walkthrough 
 
-![Video Walkthrough]( Tip-Calculator-App/gif/Jan 31, 2016 23:05.gif
+![Video Walkthrough](/gif/Jan 31, 2016 23:05.gif
 )
-![Video Walkthrough](  Tip-Calculator-App/gif/Jan 31, 2016 23:051.gif
+![Video Walkthrough]( /gif/Jan 31, 2016 23:051.gif
 )
-![Video Walkthrough]( Tip-Calculator-App/gif/Jan 31, 2016 23:052.gif
+![Video Walkthrough]( /gif/Jan 31, 2016 23:052.gif
 )
-![Video Walkthrough](  Tip-Calculator-App/gif/Jan 31, 2016 23:063.gif
+![Video Walkthrough](  /gif/Jan 31, 2016 23:063.gif
 )
