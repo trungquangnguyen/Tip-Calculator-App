@@ -55,6 +55,7 @@ class TipCalculatorViewController: UIViewController {
         }
         
         lblTipPercent.text = "%" + String(sliderTipPercent.value)
+        self.EditChangedTextField(tfBillAmount);
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
