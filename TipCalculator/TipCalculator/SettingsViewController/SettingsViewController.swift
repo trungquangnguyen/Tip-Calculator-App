@@ -62,15 +62,9 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func leftButtonAction(Sender:UIBarButtonItem){
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setValue(minPerCent, forKey: "minPerCent")
-        userDefaults.setValue(maxPerCent, forKey: "maxPerCent")
-        userDefaults.setValue(sliderTipPerCent.value  , forKey: "currentPerCent")
-        userDefaults.synchronize()
-//        NSNotificationCenter.defaultCenter().postNotificationName("popToRoot", object: String(sliderTipPerCent.value));
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
-
+    
     @IBAction func beginEditingMinTextField(sender: AnyObject) {
         if((tfMin.text) != nil){
             tfMin.text = ""
@@ -103,9 +97,14 @@ class SettingsViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
                 
                 tfMin.text = ""
+            }else{
+                let value = NSNumberFormatter().numberFromString(tfMin.text!)
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setValue( (value?.floatValue)!  , forKey: "minPerCent")
+                userDefaults.synchronize()
             }
         }else{
-            
+  
         }
         
     }
@@ -141,16 +140,23 @@ class SettingsViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 tfMax.text = ""
+            }else{
+                let value = NSNumberFormatter().numberFromString(tfMax.text!)
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setValue( (value?.floatValue)!  , forKey: "maxPerCent")
+                userDefaults.synchronize()
             }
         }else{
-            
+
         }
         
     }
  
     @IBAction func changedValueTipPerCent(sender: AnyObject) {
         lblTipPerCent.text = "%" + String(sliderTipPerCent.value)
-//         NSNotificationCenter.defaultCenter().postNotificationName("changeTipPerCent", object: String(sliderTipPerCent.value));
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setValue(sliderTipPerCent.value  , forKey: "currentPerCent")
+        userDefaults.synchronize()
 
     }
 

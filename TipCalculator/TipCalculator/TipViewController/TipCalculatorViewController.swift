@@ -101,6 +101,9 @@ class TipCalculatorViewController: UIViewController {
 
     @IBAction func sliderTipPercentChange(sender: AnyObject) {
         self.EditChangedTextField(tfBillAmount);
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setValue(sliderTipPercent.value  , forKey: "currentPerCent")
+            userDefaults.synchronize()
     }
 
     @IBAction func tapOn(sender: AnyObject) {
