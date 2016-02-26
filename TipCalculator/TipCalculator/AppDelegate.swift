@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let frame = UIScreen.mainScreen().bounds
-        window = UIWindow(frame: frame)
         
+        window = UIWindow(frame: frame)
         let tipViewControler       = TipCalculatorViewController()
         let navigationController   = UINavigationController(rootViewController: tipViewControler)
         navigationController.navigationBarHidden = true;
@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }
+        
         return true
     }
 

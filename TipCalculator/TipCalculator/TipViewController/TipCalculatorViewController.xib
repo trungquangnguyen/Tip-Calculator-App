@@ -1,102 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TipCalculatorViewController" customModule="TipCalculator" customModuleProvider="target">
             <connections>
-                <outlet property="lblTipAmount" destination="Qob-wn-6bU" id="xen-zo-nSx"/>
-                <outlet property="lblTipPercent" destination="Hqy-cO-tqF" id="3yZ-zz-HQU"/>
-                <outlet property="lblTotal" destination="kag-if-3uw" id="qop-tZ-e4k"/>
-                <outlet property="sliderTipPercent" destination="LjO-KB-6V3" id="1hq-wF-cgu"/>
-                <outlet property="tfBillAmount" destination="sbq-ie-5wc" id="aDe-Gz-yJf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="pgC-X6-Y30">
-                    <rect key="frame" x="18" y="33" width="107" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bill Amount" textAlignment="center" minimumFontSize="10" clearButtonMode="whileEditing" id="sbq-ie-5wc">
-                    <rect key="frame" x="124" y="29" width="178" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="numberPad"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jNW-kh-sTk">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.065322980043366494" green="0.45463376322751325" blue="0.03946343037879755" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guestcheck_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="udw-tz-rR9">
+                    <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="napkin4.png" translatesAutoresizingMaskIntoConstraints="NO" id="dii-xt-YU6">
+                    <rect key="frame" x="0.0" y="30" width="600" height="300"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-Eu-W7I">
+                    <rect key="frame" x="536" y="20" width="56" height="39"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="Lsz-Un-77d"/>
+                        <constraint firstAttribute="width" constant="56" id="xMW-U0-NKp"/>
+                    </constraints>
+                    <state key="normal" image="setting.png"/>
                     <connections>
-                        <action selector="EditChangedTextField:" destination="-1" eventType="editingChanged" id="OJv-hW-H6j"/>
+                        <action selector="SettingButtonAction:" destination="-1" eventType="touchDown" id="jvA-v1-3uc"/>
                     </connections>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="tLx-dd-73S">
-                    <rect key="frame" x="18" y="94" width="100" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Qob-wn-6bU">
-                    <rect key="frame" x="140" y="94" width="162" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" id="oJd-56-2ec">
-                    <rect key="frame" x="0.0" y="133" width="320" height="1"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </button>
+                <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8s-SZ-yo1">
+                    <rect key="frame" x="180" y="0.0" width="240" height="28"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1u-eg-Gbq">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="lS5-kU-xq7"/>
+                        <constraint firstAttribute="width" constant="240" id="syx-ZC-tWW"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.border.Width">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IQ3-lQ-Ij3">
-                    <rect key="frame" x="18" y="164" width="64" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" $ 0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" id="kag-if-3uw">
-                    <rect key="frame" x="109" y="164" width="193" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TipPercent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jIu-Xv-5od">
-                    <rect key="frame" x="63" y="208" width="73" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hqy-cO-tqF">
-                    <rect key="frame" x="180" y="209" width="83" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="LjO-KB-6V3">
-                    <rect key="frame" x="16" y="249" width="288" height="31"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <connections>
-                        <action selector="sliderTipPercentChange:" destination="-1" eventType="valueChanged" id="MvW-wO-ugD"/>
-                    </connections>
-                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="udw-tz-rR9" secondAttribute="trailing" id="0Sk-Lg-Kdv"/>
+                <constraint firstItem="f8s-SZ-yo1" firstAttribute="top" secondItem="jNW-kh-sTk" secondAttribute="top" id="57x-MF-gXg"/>
+                <constraint firstAttribute="bottom" secondItem="udw-tz-rR9" secondAttribute="bottom" id="5b8-yZ-OVZ"/>
+                <constraint firstItem="dii-xt-YU6" firstAttribute="height" secondItem="udw-tz-rR9" secondAttribute="height" id="7Bh-RK-i9z"/>
+                <constraint firstItem="jNW-kh-sTk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AtM-5z-59U"/>
+                <constraint firstAttribute="bottom" secondItem="jNW-kh-sTk" secondAttribute="bottom" id="Axg-wO-6xD"/>
+                <constraint firstItem="dii-xt-YU6" firstAttribute="height" secondItem="jNW-kh-sTk" secondAttribute="height" multiplier="1:2" id="LLM-9m-F82"/>
+                <constraint firstAttribute="trailing" secondItem="bCg-Eu-W7I" secondAttribute="trailing" constant="8" id="Qzu-bf-VHU"/>
+                <constraint firstItem="bCg-Eu-W7I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="T9Z-gt-RYD"/>
+                <constraint firstItem="jNW-kh-sTk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VCY-lf-vnK"/>
+                <constraint firstItem="dii-xt-YU6" firstAttribute="width" secondItem="jNW-kh-sTk" secondAttribute="width" multiplier="1:1" id="YDB-ol-6Ou"/>
+                <constraint firstAttribute="trailing" secondItem="dii-xt-YU6" secondAttribute="trailing" id="bZZ-ni-GTl"/>
+                <constraint firstItem="udw-tz-rR9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cZy-c4-uID"/>
+                <constraint firstAttribute="trailing" secondItem="jNW-kh-sTk" secondAttribute="trailing" id="gAT-fn-ohP"/>
+                <constraint firstItem="dii-xt-YU6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="vMg-t6-ITI"/>
+                <constraint firstItem="dii-xt-YU6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yFF-dk-5pH"/>
+                <constraint firstItem="f8s-SZ-yo1" firstAttribute="centerX" secondItem="jNW-kh-sTk" secondAttribute="centerX" id="yz9-YH-iUY"/>
+            </constraints>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="xK7-oe-5xm" appends="YES" id="3SN-yk-sbl"/>
             </connections>
-            <point key="canvasLocation" x="288" y="323"/>
+            <point key="canvasLocation" x="481" y="321"/>
         </view>
         <tapGestureRecognizer id="xK7-oe-5xm">
             <connections>
@@ -104,4 +94,9 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="guestcheck_background.png" width="365" height="340"/>
+        <image name="napkin4.png" width="375" height="369"/>
+        <image name="setting.png" width="33" height="26"/>
+    </resources>
 </document>
