@@ -16,6 +16,8 @@
 		102EC8DB1C5CF46C00D14963 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102EC8D91C5CF46C00D14963 /* SettingsViewController.swift */; };
 		102EC8DC1C5CF46C00D14963 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8DA1C5CF46C00D14963 /* SettingsViewController.xib */; };
 		102EC8DE1C5CFCD300D14963 /* back_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 102EC8DD1C5CFCD300D14963 /* back_icon@3x.png */; };
+		10FC62861C7FF02B004F0B21 /* tip_calculator_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FC62841C7FF02B004F0B21 /* tip_calculator_background@2x.png */; };
+		10FC62871C7FF02B004F0B21 /* tip_calculator_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FC62851C7FF02B004F0B21 /* tip_calculator_background@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		102EC8D91C5CF46C00D14963 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		102EC8DA1C5CF46C00D14963 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		102EC8DD1C5CFCD300D14963 /* back_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon@3x.png"; sourceTree = "<group>"; };
+		10FC62841C7FF02B004F0B21 /* tip_calculator_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_calculator_background@2x.png"; sourceTree = "<group>"; };
+		10FC62851C7FF02B004F0B21 /* tip_calculator_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_calculator_background@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				102EC8DD1C5CFCD300D14963 /* back_icon@3x.png */,
+				10FC62841C7FF02B004F0B21 /* tip_calculator_background@2x.png */,
+				10FC62851C7FF02B004F0B21 /* tip_calculator_background@3x.png */,
 				102EC8D31C5CF2FC00D14963 /* setting_icon@3x.png */,
 			);
 			path = Resource;
@@ -171,7 +177,9 @@
 				102EC8D41C5CF2FC00D14963 /* setting_icon@3x.png in Resources */,
 				102EC8BC1C5CE45100D14963 /* Assets.xcassets in Resources */,
 				102EC8CD1C5CE57300D14963 /* TipCalculatorViewController.xib in Resources */,
+				10FC62861C7FF02B004F0B21 /* tip_calculator_background@2x.png in Resources */,
 				102EC8DC1C5CF46C00D14963 /* SettingsViewController.xib in Resources */,
+				10FC62871C7FF02B004F0B21 /* tip_calculator_background@3x.png in Resources */,
 				102EC8DE1C5CFCD300D14963 /* back_icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

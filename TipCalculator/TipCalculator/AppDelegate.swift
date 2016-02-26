@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tipViewControler       = TipCalculatorViewController()
         let navigationController   = UINavigationController(rootViewController: tipViewControler)
+        navigationController.navigationBarHidden = true;
         if let window = self.window{
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
