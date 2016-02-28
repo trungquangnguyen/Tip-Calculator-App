@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
+    var tipPerCent: NSInteger = 0
+    var numberSplit: NSInteger = 1
     @IBOutlet weak var pickerTipView: UIPickerView!
     @IBOutlet weak var pickerSplit: UIPickerView!
     
@@ -50,8 +52,8 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
         
         // get from USER default
-        self.pickerTipView.selectRow(1, inComponent: 0, animated: true)
-        self.pickerSplit.selectRow(1, inComponent: 0, animated: true);
+        self.pickerTipView.selectRow(tipPerCent, inComponent: 0, animated: true)
+        self.pickerSplit.selectRow(numberSplit, inComponent: 0, animated: true);
     }
     
     override func didReceiveMemoryWarning() {

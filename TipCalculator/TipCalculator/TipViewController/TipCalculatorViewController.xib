@@ -28,6 +28,10 @@
                 <outlet property="lblAmount" destination="WL9-qV-NxB" id="ex1-fR-5dx"/>
                 <outlet property="lblNumberSplit" destination="rZK-FH-mlZ" id="4MW-KP-Cng"/>
                 <outlet property="lblPercentTip" destination="K9Q-9M-W14" id="Qis-2g-OMb"/>
+                <outlet property="lblTipPerson" destination="WZP-Z6-Qcs" id="lyX-fs-iNi"/>
+                <outlet property="lblTotalPay" destination="fNH-uN-B0X" id="xhC-43-h7R"/>
+                <outlet property="lblTotalPerson" destination="2yY-Ry-95E" id="uzO-wc-Z6Y"/>
+                <outlet property="lblTotalTip" destination="d9o-J2-4uW" id="CUy-ER-lod"/>
                 <outlet property="marginLeftContrain" destination="gsr-6g-Oli" id="aWm-y6-QJv"/>
                 <outlet property="service2_margin" destination="dpB-Yi-v5f" id="bvU-Dp-3v1"/>
                 <outlet property="service3_margin" destination="IxN-SH-wuM" id="bCz-hH-Tkp"/>

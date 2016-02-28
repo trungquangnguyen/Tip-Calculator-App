@@ -49,13 +49,20 @@ class TipCalculatorViewController: UIViewController {
     @IBOutlet weak var btnAmount: UIButton!
     @IBOutlet weak var imageAmount: UIImageView!
     
+    @IBOutlet weak var lblTipPerson: UILabel!
+    @IBOutlet weak var lblTotalPerson: UILabel!
+    
+    @IBOutlet weak var lblTotalPay: UILabel!
+    @IBOutlet weak var lblTotalTip: UILabel!
 //__
 //
     var arraySplit: NSArray = []
     var arrayService: NSArray = []
-    var numberSplit: NSInteger = 0
-    var percentTip: NSInteger = 0;
-
+    var numberSplit: NSInteger = 1
+    var percentTip: NSInteger = 5
+    var textField:UITextField!
+    var stringAmount:String!
+    var numberDecimal: NSInteger = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +95,39 @@ class TipCalculatorViewController: UIViewController {
         arrayService = [btnService_1,btnService_2,btnService_3,btnService_4,btnService_5,btnServiceMore]
         
         //registry receive Notification
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedTip:", name:"pickerTipView", object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedSplit:", name:"pickerSplit", object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedTip:", name:"pickerTipView", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedSplit:", name:"pickerSplit", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "saveData", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
+        self.textField = UITextField(frame: CGRectZero)
+        self.view .addSubview(self.textField);
+        textField.keyboardType = .DecimalPad
+        textField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        //getData From userDefault
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if(userDefaults.valueForKey("stringAmount") != nil){
+            stringAmount = userDefaults.valueForKey("stringAmount")! as! String
+            lblAmount.text = "$" + stringAmount
+        }else{
+            stringAmount = "0"
+        }
+        if(userDefaults.valueForKey("numberSplit") != nil){
+            numberSplit = (userDefaults.valueForKey("numberSplit")?.integerValue)!
+        }else{
+            numberSplit = 1
+        }
+        
+        if(userDefaults.valueForKey("percentTip") != nil){
+            percentTip = (userDefaults.valueForKey("percentTip")?.integerValue)!
+        }else{
+            percentTip = 0;
+        }
+        
+        if(userDefaults.valueForKey("numberDecimal") != nil){
+            numberDecimal = (userDefaults.valueForKey("numberDecimal")?.integerValue)!
+        }
+        self.setSplit()
+        self.setTip()
         
     }
 
@@ -105,7 +143,10 @@ class TipCalculatorViewController: UIViewController {
 //_____
 //
     @IBAction func SettingButtonAction(sender: AnyObject) {
-        self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+        let viewControler = SettingsViewController()
+        viewControler.numberSplit = numberSplit
+        viewControler.tipPerCent = percentTip
+        self.navigationController?.pushViewController(viewControler, animated: true)
     }
     @IBAction func tapOn(sender: AnyObject) {
         view.endEditing(true)
@@ -116,24 +157,32 @@ class TipCalculatorViewController: UIViewController {
 //____
 //
     @IBAction func splitAction(sender: AnyObject) {
-        numberSplit = sender.tag;
         if((sender.tag) == 6){
-            self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+            let viewControler = SettingsViewController()
+            viewControler.numberSplit = numberSplit
+            viewControler.tipPerCent = percentTip
+            self.navigationController?.pushViewController(viewControler, animated: true)
         }else{
+            numberSplit = sender.tag;
             self.setSplit()
         }
     }
     
     @IBAction func styleServiceAction(sender: AnyObject) {
-        percentTip = sender.tag * 5;
+  
         if((sender.tag) == 6){
-            self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+            let viewControler = SettingsViewController()
+            viewControler.numberSplit = numberSplit
+            viewControler.tipPerCent = percentTip
+            self.navigationController?.pushViewController(viewControler, animated: true)
         }else{
+            percentTip = sender.tag * 5;
             self.setTip()
         }
     }
     @IBAction func checkAmountAction(sender: AnyObject) {
-        print("sadas")
+        textField.becomeFirstResponder()
+        textField.text = "";
     }
 //___receive Notification
 //
@@ -183,6 +232,7 @@ class TipCalculatorViewController: UIViewController {
         }else{
             self.setSelectedButton(numberSplit, array: arraySplit)
         }
+        self.calculate()
     }
     func setTip(){
         //setTextTip()
@@ -206,7 +256,122 @@ class TipCalculatorViewController: UIViewController {
         }else{
             self.setSelectedButton(percentTip/5, array: arrayService)
         }
+        self.calculate()
     }
+    
+//_____ UItextField  Did Change
+//
+    func textFieldDidChange(textField: UITextField) {
+        if (textField.text == ""){
+            textField.text = "0"
+            lblAmount.text = "$0"
+           return
+        }
+        if let number = textField.text {
+            if (NSString(string: textField.text!).length > 9){
+                textField.text = self.stringAmount
+            }else{
+                 self .formatNumberFromString(number)
+            }
+           
+        }
+    }
+//_____
+//
+    func formatNumberFromString(var string: NSString) {
+        //,xxxx
+        if (string.characterAtIndex(0) == 44) {
+            string = "0" + (string as String);
+        }
+        //0xxxx
+        if (string.length > 1){
+            var char =  string.characterAtIndex(0)
+            var char1 = string.characterAtIndex(1)
+            while ( string.length > 1 && char == 48 && char1 != 44){
+                string =  string.stringByReplacingCharactersInRange(NSRange(location: 0, length: 1), withString: "")
+                char =  string.characterAtIndex(0)
+                if( string.length > 1 ){
+                    char1 = string.characterAtIndex(1)
+                }
+            }
+        }
+        //x,x,x
+        let range = string.rangeOfString(",")
+        if (range.location <= 9) {
+            string = string.stringByReplacingOccurrencesOfString(",", withString: "", options: .LiteralSearch, range: NSRange(location: 0, length: string.length) )
+            //insert char ","
+            var stringTam = "";
+            for var i = 0; i < range.location; i++ {
+                stringTam = stringTam + (NSString(characters:[string.characterAtIndex(i)], length: 1) as String)
+            }
+            stringTam = stringTam + ","
+            for var i = range.location; i < string.length; i++ {
+                stringTam = stringTam + (NSString(characters:[string.characterAtIndex(i)], length: 1) as String)
+            }
+            string = stringTam
+        }
+        stringAmount = string as String
+        self.textField.text = stringAmount
+        lblAmount.text = "$" + stringAmount
+        
+        self.calculate()
+
+    }
+    func calculate() {
+        let string = NSString(string: stringAmount)
+        if (string.length == 0){
+            return
+        }
+        let range = string.rangeOfString(",")
+        var float = 0
+        if range.location <= 9 {
+            self.numberDecimal = string.length - range.location - 1
+            for var i = 0; i<string.length ; i++ {
+                if( i != range.location){
+                    float = float * 10 + NSInteger(string.characterAtIndex(i)) - 48;
+                }
+            }
+        }else{
+            for var i = 0; i<string.length ; i++ {
+                float = float * 10 + NSInteger(string.characterAtIndex(i)) - 48;
+            }
+        }
+        //device for 100
+        var totalPay = 0.0000
+        totalPay = Double(float) * (100.00 + Double(percentTip))/100.00
+        var totalTip = 0.0000
+        totalTip = Double(float) * Double(percentTip)/100.00
+        var totalPerPerson = 0.0000
+        totalPerPerson = Double(totalPay)/Double(numberSplit)
+        var tipPerPerson = 0.0000
+        tipPerPerson = Double(totalTip)/Double(numberSplit)
+        if(self.numberDecimal > 0){
+            totalPay = totalPay/(10.000 * Double(numberDecimal))
+            totalTip = totalTip/(10.000 * Double(numberDecimal))
+            totalPerPerson = totalPerPerson/(10.000 * Double(numberDecimal))
+            tipPerPerson = tipPerPerson/(10.000 * Double(numberDecimal))
+        }
+        
+        
+
+        let nf = NSNumberFormatter()
+        nf.numberStyle = .DecimalStyle
+        lblTotalPay.text = "$" + nf.stringFromNumber(totalPay)!
+        lblTotalTip.text = "$" + nf.stringFromNumber(totalTip)!
+        lblTotalPerson.text = "$" + nf.stringFromNumber(totalPerPerson)!
+        lblTipPerson.text = "$" + nf.stringFromNumber(tipPerPerson)!
+    }
+//____ Save Data
+//
+    func saveData(){
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setValue(stringAmount  , forKey: "stringAmount")
+        userDefaults.setValue(numberSplit  , forKey: "numberSplit")
+        userDefaults.setValue(percentTip  , forKey: "percentTip")
+        userDefaults.setValue(numberDecimal  , forKey: "numberDecimal")
+        userDefaults.synchronize()
+    }
+    
 }
 
 
