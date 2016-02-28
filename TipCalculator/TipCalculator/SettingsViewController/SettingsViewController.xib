@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="TipCalculator" customModuleProvider="target">
             <connections>
+                <outlet property="pickerSplit" destination="0za-YV-0ci" id="iKF-8T-6Qb"/>
+                <outlet property="pickerTipView" destination="Tpz-4V-J4K" id="YF3-8V-AAf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,20 +28,82 @@
                         <constraint firstAttribute="height" constant="29" id="dMk-XN-xyL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwH-pm-l5a">
-                    <rect key="frame" x="13" y="11" width="31" height="28"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ii3-lP-rNj">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP9-7a-0sp">
+                            <rect key="frame" x="0.0" y="200" width="300" height="22"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwH-pm-l5a">
+                            <rect key="frame" x="10" y="10" width="31" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="ghC-x3-CnF"/>
+                                <constraint firstAttribute="width" constant="31" id="jX9-Me-fYu"/>
+                            </constraints>
+                            <state key="normal" image="back_icon.png"/>
+                            <connections>
+                                <action selector="disMissSelf:" destination="-1" eventType="touchDown" id="Bj2-l1-zXS"/>
+                            </connections>
+                        </button>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0za-YV-0ci">
+                            <rect key="frame" x="0.0" y="220" width="300" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="vWx-jX-xSX"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="mcs-bv-VwA"/>
+                                <outlet property="delegate" destination="-1" id="G4o-hO-kgG"/>
+                            </connections>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="28" id="SMa-2s-xQ9"/>
-                        <constraint firstAttribute="width" constant="31" id="zKl-Pr-GHF"/>
+                        <constraint firstItem="qP9-7a-0sp" firstAttribute="width" secondItem="Ii3-lP-rNj" secondAttribute="width" id="93T-8O-M0B"/>
+                        <constraint firstItem="mwH-pm-l5a" firstAttribute="top" secondItem="Ii3-lP-rNj" secondAttribute="top" constant="10" id="DpB-Ld-oDM"/>
+                        <constraint firstItem="0za-YV-0ci" firstAttribute="centerY" secondItem="Ii3-lP-rNj" secondAttribute="centerY" constant="20" id="Eyu-Sf-46Y"/>
+                        <constraint firstItem="mwH-pm-l5a" firstAttribute="leading" secondItem="Ii3-lP-rNj" secondAttribute="leading" constant="10" id="RmS-rO-GOF"/>
+                        <constraint firstItem="0za-YV-0ci" firstAttribute="width" secondItem="Ii3-lP-rNj" secondAttribute="width" id="WIf-KF-3of"/>
+                        <constraint firstItem="0za-YV-0ci" firstAttribute="centerX" secondItem="Ii3-lP-rNj" secondAttribute="centerX" id="fUY-ZI-3CE"/>
+                        <constraint firstItem="qP9-7a-0sp" firstAttribute="centerX" secondItem="0za-YV-0ci" secondAttribute="centerX" id="gwU-gM-mpf"/>
+                        <constraint firstItem="qP9-7a-0sp" firstAttribute="top" secondItem="0za-YV-0ci" secondAttribute="top" constant="-20" id="rgF-8P-7zl"/>
                     </constraints>
-                    <state key="normal" image="back_icon.png"/>
-                    <connections>
-                        <action selector="disMissSelf:" destination="-1" eventType="touchDown" id="Bj2-l1-zXS"/>
-                    </connections>
-                </button>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cV-Kk-Pwv">
+                    <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% Tip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-ns-2T0">
+                            <rect key="frame" x="-20" y="200" width="300" height="22"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tpz-4V-J4K">
+                            <rect key="frame" x="-20" y="220" width="300" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="YbO-hd-D0P"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="Y93-Yw-qaN"/>
+                                <outlet property="delegate" destination="-1" id="oGn-VP-wgA"/>
+                            </connections>
+                        </pickerView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Tpz-4V-J4K" firstAttribute="centerY" secondItem="5cV-Kk-Pwv" secondAttribute="centerY" constant="20" id="80D-6x-jTv"/>
+                        <constraint firstItem="hdd-ns-2T0" firstAttribute="width" secondItem="5cV-Kk-Pwv" secondAttribute="width" id="IfH-t2-6OI"/>
+                        <constraint firstItem="Tpz-4V-J4K" firstAttribute="centerX" secondItem="5cV-Kk-Pwv" secondAttribute="centerX" constant="-20" id="O64-Hu-wO3"/>
+                        <constraint firstItem="Tpz-4V-J4K" firstAttribute="width" secondItem="5cV-Kk-Pwv" secondAttribute="width" id="efq-rq-MQL"/>
+                        <constraint firstItem="hdd-ns-2T0" firstAttribute="centerX" secondItem="Tpz-4V-J4K" secondAttribute="centerX" id="fW4-eZ-PC9"/>
+                        <constraint firstItem="hdd-ns-2T0" firstAttribute="top" secondItem="Tpz-4V-J4K" secondAttribute="top" constant="-20" id="liW-rn-G8A"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
@@ -46,23 +111,21 @@
                 <constraint firstItem="N2Z-pY-jGe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Ux-bg-KcQ"/>
                 <constraint firstAttribute="bottom" secondItem="N2Z-pY-jGe" secondAttribute="bottom" id="6WZ-WW-KyS"/>
                 <constraint firstItem="N2Z-pY-jGe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Vo-JF-BQ2"/>
+                <constraint firstAttribute="bottom" secondItem="5cV-Kk-Pwv" secondAttribute="bottom" id="B6c-Mz-P4f"/>
+                <constraint firstItem="5cV-Kk-Pwv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QFH-hy-Cj0"/>
                 <constraint firstItem="UOg-38-0qN" firstAttribute="centerX" secondItem="N2Z-pY-jGe" secondAttribute="centerX" id="QNu-If-fng"/>
+                <constraint firstItem="5cV-Kk-Pwv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:2" id="SRh-WR-grR"/>
+                <constraint firstItem="Ii3-lP-rNj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="U1M-Qv-gye"/>
+                <constraint firstItem="Ii3-lP-rNj" firstAttribute="width" secondItem="5cV-Kk-Pwv" secondAttribute="width" id="Za0-EH-B9l"/>
+                <constraint firstItem="Ii3-lP-rNj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="d9f-Rm-JYT"/>
                 <constraint firstItem="UOg-38-0qN" firstAttribute="width" secondItem="N2Z-pY-jGe" secondAttribute="height" multiplier="43:100" id="gq7-1l-z6z"/>
                 <constraint firstItem="UOg-38-0qN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="98" id="nuH-GC-dy8"/>
-                <constraint firstItem="mwH-pm-l5a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="11" id="oEF-Ac-NKZ"/>
-                <constraint firstItem="mwH-pm-l5a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="qBL-Gn-58t"/>
+                <constraint firstAttribute="bottom" secondItem="Ii3-lP-rNj" secondAttribute="bottom" id="r9E-KT-9ce"/>
                 <constraint firstAttribute="trailing" secondItem="N2Z-pY-jGe" secondAttribute="trailing" id="tmy-fd-4sS"/>
+                <constraint firstAttribute="trailing" secondItem="5cV-Kk-Pwv" secondAttribute="trailing" id="w9b-Tn-NJb"/>
             </constraints>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="1az-W0-cuK" appends="YES" id="45e-xP-7A1"/>
-            </connections>
             <point key="canvasLocation" x="271" y="142"/>
         </view>
-        <tapGestureRecognizer id="1az-W0-cuK">
-            <connections>
-                <action selector="tapOn:" destination="-1" id="5FJ-UZ-Suj"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="back_icon.png" width="16" height="16"/>
