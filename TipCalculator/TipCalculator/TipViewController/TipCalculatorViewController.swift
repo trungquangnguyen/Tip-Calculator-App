@@ -322,7 +322,11 @@ class TipCalculatorViewController: UIViewController {
         if (string.length == 0){
             return
         }
-        let range = string.rangeOfString(",")
+        var range = string.rangeOfString(",")
+        if range.location > 9 {
+                  range = string.rangeOfString(".")  
+        }
+
         var float = 0
         if range.location <= 9 {
             self.numberDecimal = string.length - range.location - 1
